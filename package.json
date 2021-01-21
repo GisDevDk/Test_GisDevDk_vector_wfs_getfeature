@@ -1,5 +1,6 @@
 {
   "name": "vector-wfs-getfeature",
+  
   "dependencies": {
     "ol": "6.5.0"
   },
