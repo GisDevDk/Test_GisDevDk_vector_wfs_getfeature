@@ -59,16 +59,3 @@ var featureRequest = new WFS().writeGetFeature({
   )
 });
 
-// then post the request and add the received features to a layer
-fetch("https://ahocevar.com/geoserver/wfs", {
-  method: "POST",
-  body: new XMLSerializer().serializeToString(featureRequest)
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (json) {
-    var features = new GeoJSON().readFeatures(json);
-    vectorSource.addFeatures(features);
-    map.getView().fit(vectorSource.getExtent());
-  });
